@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Alumnes</string>
+    <string-array name="dropdown_items">
+        <item>1R DAM</item>
+        <item>2N DAM</item>
+        <item>1R SMX</item>
+        <item>2N SMX</item>
+        <item>1R BTX</item>
+        <item>2N BTX</item>
+    </string-array>
+</resources>
