@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Alumnes</string>
+    <string name="nom">NOM</string>
+    <string name="edat">EDAT</string>
+    <string name="plus_sign">+</string>
+    <string name="next_arrow"><![CDATA[>>]]></string>
+    <string name="return_button">Return</string>
     <string-array name="dropdown_items">
         <item>1R DAM</item>
         <item>2N DAM</item>
