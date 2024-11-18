@@ -2,8 +2,8 @@ package com.alumnes.alumnes
 
 data class Alumne(val name: String, val age: Int, val course: String)
 
-class DataSource {
-    val alumneList: ArrayList<Alumne> = arrayListOf(
+class DataSource private constructor() {
+    val alumneList: MutableList<Alumne> = arrayListOf(
         Alumne("John Smith", 18, "1R DAM"),
         Alumne("Jane Doe", 19, "2N DAM"),
         Alumne("Alice Johnson", 17, "1R SMX"),
@@ -35,4 +35,9 @@ class DataSource {
         Alumne("Amy Scott", 17, "1R BTX"),
         Alumne("Brandon Lee", 18, "2N BTX")
     )
+
+    companion object {
+        val instance: DataSource by lazy { DataSource() }
+    }
+
 }

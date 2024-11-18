@@ -29,15 +29,17 @@ class MainActivity2 : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<ItemsViewModel>()
 
-        val dataSource = DataSource()
+        val dataSource = DataSource.instance
 
         // Get the selected option from the intent
         val selectedOption = intent.getStringExtra("selected_option")
+        val selectedName = intent.getStringExtra("selected_name")
 
         for (alumne in dataSource.alumneList) {
-            if (alumne.course == selectedOption) {
+            if (alumne.course == selectedOption && alumne.name == selectedName) {
                 data.add(ItemsViewModel(R.drawable.pikachu, "${alumne.name}  ${alumne.age}  ${alumne.course}"))
-            }        }
+            }
+        }
 
         // This will pass the ArrayList to our Adapter
         val adapter = CustomAdapter(data)
@@ -46,7 +48,7 @@ class MainActivity2 : AppCompatActivity() {
         binding.recyclerview.adapter = adapter
 
         binding.returnButton.setOnClickListener{
-            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }
