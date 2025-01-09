@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import com.alumnes.alumnes.databinding.ActivityMainBinding
-import com.alumnes.alumnes.DataSource
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,24 +38,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var name = ""
-        var age = 0
-
         toggleButtonAdd(binding)
 
         // Add text change listeners to name and age fields
         binding.nomAlumne.addTextChangedListener {
             toggleButtonAdd(binding)
-            name = binding.nomAlumne.text.toString()
         }
 
         binding.edatAlumne.addTextChangedListener {
             toggleButtonAdd(binding)
-            age = Integer.parseInt(binding.edatAlumne.text.toString())
         }
 
         binding.buttonAdd.setOnClickListener {
             val course = binding.dropdownMenu.selectedItem.toString()
+            val age = Integer.parseInt(binding.edatAlumne.text.toString())
+            val name = binding.nomAlumne.text.toString()
             addToArray(name, age, course)
         }
     }
